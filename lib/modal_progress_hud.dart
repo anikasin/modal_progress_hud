@@ -33,6 +33,7 @@ class ModalProgressHUD extends StatelessWidget {
           ),
           new Center(
             child: new Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 progressIndicator,
                 progressText
