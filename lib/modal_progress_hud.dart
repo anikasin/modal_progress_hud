@@ -8,7 +8,8 @@ class ModalProgressHUD extends StatelessWidget {
   final double opacity;
   final Color color;
   final ProgressIndicator progressIndicator;
-  final Text progressText;
+  final Widget progressText;
+  final bool dismissible;
 
   ModalProgressHUD({
     Key key,
@@ -18,6 +19,7 @@ class ModalProgressHUD extends StatelessWidget {
     this.opacity = 0.3,
     this.color = Colors.grey,
     this.progressIndicator = const CircularProgressIndicator(),
+    this.dismissible = false,
   }) : super(key: key);
 
   @override
@@ -29,16 +31,17 @@ class ModalProgressHUD extends StatelessWidget {
         children: [
           new Opacity(
             opacity: opacity,
-            child: ModalBarrier(dismissible: false, color: color),
+            child: ModalBarrier(dismissible: dismissible, color: color),
           ),
           new Center(
             child: new Column(
               crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 progressIndicator,
                 progressText,
-              ]
-            )
+              ],
+            ),
           ),
         ],
       );
