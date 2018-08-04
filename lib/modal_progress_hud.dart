@@ -8,7 +8,7 @@ class ModalProgressHUD extends StatelessWidget {
   final double opacity;
   final Color color;
   final ProgressIndicator progressIndicator;
-  final Text progressText
+  final Text progressText;
 
   ModalProgressHUD({
     Key key,
@@ -36,7 +36,7 @@ class ModalProgressHUD extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 progressIndicator,
-                progressText
+                progressText,
               ]
             )
           ),
